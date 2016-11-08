@@ -443,6 +443,13 @@
         return '<table cellpadding="0" cellspacing="0" class="pika-table" role="grid" aria-labelledby="' + randId + '">' + renderHead(opts) + renderBody(data) + '</table>';
     },
 
+    renderFooter = function(opts) {
+      if (opts.footer) {
+        return `<div class="pika-footer">${opts.footer(opts.nullFooterCheckboxId, opts.getIsChecked)}</div>`;
+      }
+
+      return '';
+    },
 
     /**
      * Pikaday constructor
@@ -1173,7 +1180,7 @@
                     isWeekSelected = false;
                 }
             }
-            return renderTable(opts, data, randId);
+            return renderTable(opts, data, randId) + renderFooter(opts);
         },
 
         isVisible: function()
