@@ -574,6 +574,7 @@
         self._onInputFocus = function()
         {
             self.show();
+            opts.onFocus();
         };
 
         self._onInputClick = function()
