@@ -445,7 +445,7 @@
 
     renderFooter = function(opts) {
       if (opts.footer) {
-        return `<div class="pika-footer">${opts.footer(opts.nullFooterCheckboxId, opts.getIsChecked)}</div>`;
+        return '<div class="pika-footer">' + opts.footer(opts.nullFooterCheckboxId, opts.getIsChecked) + '</div>';
       }
 
       return '';
